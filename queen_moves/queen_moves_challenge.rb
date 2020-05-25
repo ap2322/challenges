@@ -49,14 +49,15 @@ class Board
             on_col = cell.coordinates[1] == queen_coords[1]
 
             if  on_row || on_col || on_diag(queen_coords, cell.coordinates)
-                require 'pry'; binding.pry
                 cell.coordinates
             end
         end
     end
 
     def on_diag(queen_coords, cell_coords)
-        require 'pry'; binding.pry
+        x_diff = (queen_coords[0] - cell_coords[0]).abs
+        y_diff = (queen_coords[1] - cell_coords[1]).abs
+        x_diff == y_diff
     end
 end
 
